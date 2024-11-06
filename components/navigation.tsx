@@ -7,7 +7,7 @@ export default function Navigation(){
     const path = usePathname();
     //Nextjs에서 모든 페이지가 SSR됨
     //hydrate(React가 서버 환경에서 미리 렌더링한 HTML에 연결하는 방식)
-    //back-end에서 html로 reder되고 front-end에서 hydrate됨
+    //back-end에서 html로 render되고 front-end에서 hydrate됨
 
     //console.log("helllo");
     //이런식으로 use client를 사용해도 back-end에서 console.log가 실행됨
