@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import style from "../styles/navigation.module.css";
 
 export default function Navigation(){
     const path = usePathname();
@@ -16,7 +17,7 @@ export default function Navigation(){
     //"use client"라고 명시된 파일만 hydrate함
     //유저는 다운받아야할 javascript양이 줄어들게 되므로 로딩 속도가 빨라짐
     return(
-        <nav>
+        <nav className={style.nav}>
             <ul>
                 <li>
                     <Link href="/">Home</Link> {path === "/" ? "🔥" : ""}

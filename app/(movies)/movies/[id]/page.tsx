@@ -1,7 +1,8 @@
 import { Suspense } from "react"
-import MovieInfo from "../../../../components/movie-info"
-import MovieVideos from "../../../../components/movie-video"
+import MovieInfo from "../../../components/movie-info"
+import MovieVideos from "../../../components/movie-video"
 
+import moviestyle from "../../../styles/movie-info.module.css"
 
 
 export default async function MovieDetail({params:{id}}:{params:{id:string}}){

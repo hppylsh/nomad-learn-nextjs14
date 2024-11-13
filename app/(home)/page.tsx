@@ -1,5 +1,7 @@
 import { Metadata } from "next"
-import Link from "next/link";
+import "../styles/global.css"
+import Movie from "../components/movie";
+import styles from "../styles/home.module.css"
 
 export const metadata:Metadata = {
     title: 'Home',
@@ -16,12 +18,14 @@ async function getMovies(){
 
 export default async function HomePage(){
     const movie = await getMovies();
-    return (<>
-        <div>{movie.map(movie => 
-            <li key={movie.id}>
-                <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
-            </li>)}</div>
-    </>)
+    return (
+        <div className={styles.container}>
+            {movie.map((movie) => 
+                (<Movie key={movie.id} id={movie.id} poster_path={movie.poster_path} title={movie.title}/>
+
+                ))}
+        </div>
+    );
 }
 
 /* 괄호()로 묶은 폴더는 경로를 생성하지 않습니다 */
